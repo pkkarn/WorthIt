@@ -155,4 +155,70 @@ array<int, 5> arr {32,12,3,34,3};
 
 
 
+### Vectors:
+
+A dynamic array that can shrink and grow its size as needed.
+
+```c++
+vector<int> arr;
+vector<int> arr2 {2,3,4,4};
+
+arr.push_back(3);
+arr.push_back(2);
+
+arr.size(); // 2
+
+arr.pop_back(); // delete item from last; 
+
+
+// copy the vector arr2 entirely inside vector arr3
+vector<int> arr3(arr2.begin(), arr2.end() - 2); // 2, 3
+vector<int> arr4(arr2); // 2,3,4,4
+
+v.emplace_back(3333); // this one takes lesser time than push_back
+```
+
+**Important**
+
+1. `vector<int>::iterator it;`
+
+Above line codee is used to declare and iterator type vairable. So, if you have
+defined your iterator like this then you don't have to mention it like `auto it`
+in for loop.
+
+```c++
+  for (it = v.begin(); it != v.end(); ++it) {
+    std::cout << *it << std::endl;  // Dereference the iterator to access the element
+  }
+```
+
+2. `find() method in #include <algorithm>`
+
+`auto(iterator_type) i = std::find(v.begin(), v.end(), 33);`
+
+this one gives you the iterator pointing at first occurence of 33 in vector.
+
+3. `emplace_back` and `push_back`
+
+/**
+   * emplace_back() may be faster than push_back() in some cases because it constructs the element in-place within the container, rather than requiring an additional copy or move operation.
+  */
+
+```c++
+
+  Point p1 = Point(3,1);
+  vector<Point> pointers_data;
+  
+  // puhsh_back takes element as an argument and copies in vector
+  pointers_data.push_back(p1);
+  // while emplace_back takes and constructor as an argument and creates an element out it and then places it back.
+  pointers_data.emplace_back(5,4);
+  
+  /**
+   * emplace_back() may be faster than push_back() in some cases because it constructs the element in-place within the container, rather than requiring an additional copy or move operation.
+  */
+  
+  cout << pointers_data[1].x;
+```
+
 
