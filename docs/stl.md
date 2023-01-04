@@ -176,6 +176,17 @@ vector<int> arr3(arr2.begin(), arr2.end() - 2); // 2, 3
 vector<int> arr4(arr2); // 2,3,4,4
 
 v.emplace_back(3333); // this one takes lesser time than push_back
+
+
+// declaration of 2d vector - A vector of 10 size vector and each vector inside has size 20. with default value 444
+
+vector<vector<int>> vec1(10, vector<int> (20, 444));
+
+// 3D Vector Declaration
+
+vector<vector<vector<int>>> vec(10, vector<vector<int>> (15, vector<int>(29, 34339)));
+
+cout << vec.at(9).at(14).at(28);
 ```
 
 **Important**
@@ -220,5 +231,7 @@ this one gives you the iterator pointing at first occurence of 33 in vector.
   
   cout << pointers_data[1].x;
 ```
+
+
 
 
