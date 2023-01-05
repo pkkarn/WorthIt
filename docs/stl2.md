@@ -182,10 +182,19 @@ Also can be done like this:
 
 But for that you have to import `utility`
 
-```c++
 
+```c++
 import <utility>
 
 nested.insert(pair<int, string>(2, "test"))// OR
 nested.insert(make_pair(2, "test"))//
+```
+
+if there is a `method` that returns an `iterator` then you can access the value like this:
+
+```c++
+ for(auto i = points.begin(); i != points.end(); i++) {
+    cout << i->first << ":" << i->second << endl;
+ }
+```
 
